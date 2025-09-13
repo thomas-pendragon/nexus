@@ -1,0 +1,38 @@
+/* Theme tokens */
+$theme-light: (
+  bg: #ffffff,
+  fg: #111111
+);
+
+$theme-dark: (
+  bg: #0f1114,
+  fg: #e7eaef
+);
+
+/* Emit variables */
+@mixin theme-vars($map) {
+  @each $key, $val in $map {
+    --#{$key}: #{$val};
+  }
+}
+
+/* Light default */
+:root {
+  @include theme-vars($theme-light);
+}
+
+/* Dark system */
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include theme-vars($theme-dark);
+  }
+}
+
+/* Manual overrides */
+[data-theme="light"] {
+  @include theme-vars($theme-light);
+}
+
+[data-theme="dark"] {
+  @include theme-vars($theme-dark);
+}

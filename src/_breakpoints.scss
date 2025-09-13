@@ -1,0 +1,28 @@
+/* Breakpoints */
+$break-tablet: 600px;
+$break-notebook: 1024px;
+$break-desktop: 1440px;
+
+@mixin phone {
+  @media (max-width: #{$break-tablet}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$break-tablet + 1}) and (max-width: #{$break-notebook - 1}) {
+    @content;
+  }
+}
+
+@mixin notebook {
+  @media (min-width: #{$break-notebook}) and (max-width: #{$break-desktop - 1}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$break-desktop}) {
+    @content;
+  }
+}

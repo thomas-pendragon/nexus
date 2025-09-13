@@ -1,0 +1,21 @@
+{
+  "name": "nexus",
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf build && mkdir -p build",
+    "build:css": "sass src/nexus.scss build/nexus.css --style=expanded --no-source-map",
+    "postcss": "postcss build/nexus.css -o build/nexus.min.css",
+    "build": "npm run clean && npm run build:css && npm run postcss",
+    "watch": "sass --watch src/nexus.scss build/nexus.css"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "cssnano": "^6.1.2",
+    "postcss": "^8.4.47",
+    "postcss-cli": "^11.0.0",
+    "postcss-nesting": "^12.1.5",
+    "postcss-custom-properties": "^13.3.6",
+    "sass": "^1.79.4"
+  }
+}
+

@@ -1,0 +1,97 @@
+/* Reset.css */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  margin: 0;
+}
+
+button {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure {
+  margin: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Breakpoints */
+/* Theme tokens */
+/* Emit variables */
+/* Light default */
+:root {
+  --bg: #ffffff;
+  --fg: #111111;
+}
+
+/* Dark system */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1114;
+    --fg: #e7eaef;
+  }
+}
+/* Manual overrides */
+[data-theme=light] {
+  --bg: #ffffff;
+  --fg: #111111;
+}
+
+[data-theme=dark] {
+  --bg: #0f1114;
+  --fg: #e7eaef;
+}
+
+body {
+  background: var(--bg);
+}
